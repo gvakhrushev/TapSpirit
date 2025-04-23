@@ -1,0 +1,214 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Comic Neue', sans-serif;
+    background: url('https://images.unsplash.com/photo-1518709268805-4e9042af9ef0') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.score-board {
+    background: rgba(92, 64, 51, 0.7);
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 24px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.score-icon {
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+}
+
+.tap-area {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.spirit {
+    width: 150px;
+    height: 150px;
+    cursor: pointer;
+    transition: transform 0.1s ease, filter 0.3s ease;
+    filter: drop-shadow(0 0 10px rgba(244, 228, 188, 0.5));
+}
+
+.spirit:active {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 15px rgba(244, 228, 188, 1));
+}
+
+.energy-bar {
+    width: 200px;
+    height: 20px;
+    background: #4A7043;
+    border-radius: 10px;
+    margin: 0 auto 20px;
+    overflow: hidden;
+    border: 2px solid #5C4033;
+}
+
+#energy-fill {
+    height: 100%;
+    background: #A3BFFA;
+    width: 100%;
+    transition: width 0.3s ease;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px;
+}
+
+.menu-icon {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.2));
+}
+
+.menu-icon:hover {
+    transform: scale(1.1);
+}
+
+.points-animation {
+    position: absolute;
+    color: #fff;
+    font-size: 20px;
+    font-family: 'Comic Neue', sans-serif;
+    opacity: 1;
+    transition: all 1s ease;
+    pointer-events: none;
+}
+
+/* Стили для экрана бустеров */
+.boosters-list {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    background: rgba(92, 64, 51, 0.5);
+    border-radius: 10px;
+}
+
+.booster-card {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    color: #fff;
+}
+
+.booster-card img {
+    width: 50px;
+    height: 50px;
+}
+
+.booster-card h3 {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.booster-card p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.booster-card button {
+    background: #8BA888;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.booster-card button:hover {
+    background: #A3BFFA;
+}
+
+#connect-wallet-btn {
+    background: #5C4033;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    margin: 20px 0;
+    transition: background 0.3s ease;
+}
+
+#connect-wallet-btn:hover {
+    background: #8B6F47;
+}
+
+/* Стили для экрана друзей */
+.friends-list {
+    flex-grow: 1;
+    background: rgba(92, 64, 51, 0.5);
+    border-radius: 10px;
+    padding: 20px;
+    color: #fff;
+}
+
+.friends-list h3 {
+    margin-bottom: 20px;
+}
+
+.friend-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.friend-item img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.friends-list button {
+    background: #8BA888;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.friends-list button:hover {
+    background: #A3BFFA;
+}
