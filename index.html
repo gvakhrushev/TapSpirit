@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TapSpirit</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container" id="main-screen">
+        <div class="score-board">
+            <span id="score">0</span>
+            <img src="https://img.icons8.com/ios-filled/50/ffffff/leaf.png" alt="Leaf Icon" class="score-icon">
+        </div>
+        <div class="tap-area" id="spirit">
+            <img src="https://img.icons8.com/color/150/000000/forest.png" alt="Forest Spirit" class="spirit">
+        </div>
+        <div class="energy-bar">
+            <div id="energy-fill"></div>
+        </div>
+        <div class="menu">
+            <img src="https://img.icons8.com/ios-filled/40/D4A5A5/mushroom.png" alt="Boosters" class="menu-icon" onclick="showScreen('boosters-screen')">
+            <img src="https://img.icons8.com/ios-filled/40/D4A5A5/home.png" alt="Home" class="menu-icon" onclick="showScreen('main-screen')">
+            <img src="https://img.icons8.com/ios-filled/40/D4A5A5/scroll.png" alt="Friends" class="menu-icon" onclick="showScreen('friends-screen')">
+        </div>
+    </div>
+
+    <!-- Экран бустеров -->
+    <div class="container" id="boosters-screen" style="display: none;">
+        <div class="score-board">
+            <span id="score-boosters">0</span>
+            <img src="https://img.icons8.com/ios-filled/50/ffffff/leaf.png" alt="Leaf Icon" class="score-icon">
+        </div>
+        <div class="boosters-list">
+            <div class="booster-card" id="tap-booster">
+                <img src="https://img.icons8.com/ios-filled/50/8BA888/leaf.png" alt="Tap Booster">
+                <h3>Благословение Леса</h3>
+                <p>Увеличение тапа (x2)</p>
+                <p>Стоимость: <span id="tap-booster-cost">100</span> <img src="https://img.icons8.com/ios-filled/20/ffffff/leaf.png" alt="Leaf Icon"></p>
+                <button onclick="buyBooster('tap')">Купить</button>
+            </div>
+            <div class="booster-card" id="energy-booster">
+                <img src="https://img.icons8.com/ios-filled/50/A3BFFA/sun.png" alt="Energy Booster">
+                <h3>Солнечный Чай</h3>
+                <p>Быстрое восстановление энергии</p>
+                <p>Стоимость: <span id="energy-booster-cost">50</span> <img src="https://img.icons8.com/ios-filled/20/ffffff/leaf.png" alt="Leaf Icon"></p>
+                <button onclick="buyBooster('energy')">Купить</button>
+            </div>
+        </div>
+        <button id="connect-wallet-btn" onclick="connectWallet()">Подключить TON кошелек</button>
+        <div class="menu">
+            <img src="https://img.icons8.com/ios-filled/40/D4A5A5/arrow-left.png" alt="Back" class="menu-icon" onclick="showScreen('main-screen')">
+        </div>
+    </div>
+
+    <!-- Экран друзей -->
+    <div class="container" id="friends-screen" style="display: none;">
+        <div class="score-board">
+            <span id="score-friends">0</span>
+            <img src="https://img.icons8.com/ios-filled/50/ffffff/leaf.png" alt="Leaf Icon" class="score-icon">
+        </div>
+        <div class="friends-list">
+            <h3>Друзья</h3>
+            <div id="friends-container"></div>
+            <button onclick="inviteFriends()">Пригласить друзей</button>
+        </div>
+        <div class="menu">
+            <img src="https://img.icons8.com/ios-filled/40/D4A5A5/arrow-left.png" alt="Back" class="menu-icon" onclick="showScreen('main-screen')">
+        </div>
+    </div>
+
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script src="https://unpkg.com/@tonconnect/sdk@latest/dist/tonconnect-sdk.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
